@@ -1,5 +1,14 @@
 # clang-format-tugraz
 
+Provides a [.clang-format](.clang-format) configuration that satisfies the [C coding standard of TUGraz](https://palme.iicm.tugraz.at/wiki/ESP/CS).
+
+## Usage
+
+With the [.clang-format](.clang-format) file in the current directory, run the following command to format `../assignment/file.c`:
+```shell
+clang-format -style=file ../assignment/file.c -i
+```
+
 ## Created with [clang-format-configurator](https://zed0.co.uk/clang-format-configurator/)
 
 Mostly custom rules with `Mozilla` style as fallback.
