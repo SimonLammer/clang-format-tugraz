@@ -2,7 +2,35 @@
 
 ## Created with [clang-format-configurator](https://zed0.co.uk/clang-format-configurator/)
 
-Mostly custom with `Mozilla` style as fallback.
+Mostly custom rules with `Mozilla` style as fallback.
+
+# CS inconsistencies:
+
+https://palme.iicm.tugraz.at/wiki/ESP/CS#Jeder_Befehl_steht_in_einer_eigenen_Zeile
+
+- If without braces
+- Space after if
+
+https://palme.iicm.tugraz.at/wiki/ESP/CS#Kurzes_Code_Beispiel_.28Cheat_Sheet.29_-_Teil_2_.28with_Pointers_etc.29
+
+- trailing space in `// There are spaces between operators like = and arguments `
+- trailing space in `// How to cast. Note that one should use the floor function here `
+- missing space in `024}; `
+- trailing space in `024}; `
+- Indent empty lines? `050   ` vs `060 `
+- 2nd empty line on line 50?
+- Switch without `break` in `default`?
+
+Spaces in braces?
+Teil3.pdf: `int month_days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };` 
+Example2:  `048   NumberStructure number_2 = {0, 0};`
+
+2_do_while_demo.c do while without braces:
+```c
+do
+  sum += counter;
+while (--counter);
+```
 
 # Things not checked by clang-format
 
@@ -82,32 +110,4 @@ if (1 == 1)
 {
   print("foo");
 }
-```
-
-# CS inconsistencies:
-
-https://palme.iicm.tugraz.at/wiki/ESP/CS#Jeder_Befehl_steht_in_einer_eigenen_Zeile
-
-- If without braces
-- Space after if
-
-https://palme.iicm.tugraz.at/wiki/ESP/CS#Kurzes_Code_Beispiel_.28Cheat_Sheet.29_-_Teil_2_.28with_Pointers_etc.29
-
-- trailing space in `// There are spaces between operators like = and arguments `
-- trailing space in `// How to cast. Note that one should use the floor function here `
-- missing space in `024}; `
-- trailing space in `024}; `
-- Indent empty lines? `050   ` vs `060 `
-- 2nd empty line on line 50?
-- Switch without `break` in `default`?
-
-Spaces in braces?
-Teil3.pdf: `int month_days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };` 
-Example2:  `048   NumberStructure number_2 = {0, 0};`
-
-2_do_while_demo.c do while without braces:
-```c
-do
-  sum += counter;
-while (--counter);
 ```
