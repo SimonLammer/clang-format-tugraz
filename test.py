@@ -3,18 +3,19 @@
 import difflib
 import os
 import subprocess
+import sys
 
-def main():
-  root = os.path.dirname(os.path.abspath(__file__)) + '/test'
-  print(root, __file__)
+def main(folder):
+  root = os.path.dirname(os.path.abspath(__file__)) + f'/{folder}/test'
+  #print(root, __file__)
   for folder, _, files in os.walk(root):
     if files:
       print(f"In {folder}:")
     for output_file in files:
-      if not output_file.endswith('.out.c'):
+      if not '.out.' in output_file:
         continue
       for input_file in files:
-        if not input_file.endswith('.in.c') or not output_file[:-6] == input_file[:-5]:
+        if not '.in.' in input_file or output_file.split('.')[0] != input_file.split('.')[0]:
           continue
         print(f"\tComparing {output_file} with clang-format({input_file})")
         expected_fh = open(f'{folder}/{output_file}', 'r')
@@ -24,7 +25,10 @@ def main():
         if diff:
           print(''.join(diff))
         expected_fh.close()
-  pass
 
 if __name__ == '__main__':
-  main()
+  folder = 'c'
+  if len(sys.argv) == 2:
+    folder = sys.argv[1]
+  print(f"Running tests for {folder}.")
+  main(folder)
