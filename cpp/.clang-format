@@ -15,6 +15,20 @@ AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: 'true'
 BinPackArguments: 'false'
 BinPackParameters: 'false'
+BraceWrapping:
+  AfterEnum: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: true
+  BeforeCatch: true
+  BeforeElse: true
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
 BreakAfterJavaFieldAnnotations: 'true'
 BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeBraces: Allman
@@ -32,7 +46,7 @@ IndentPPDirectives: None
 IndentWidth: '2'
 KeepEmptyLinesAtTheStartOfBlocks: 'false'
 Language: Cpp
-MaxEmptyLinesToKeep: '2'
+MaxEmptyLinesToKeep: '1'
 NamespaceIndentation: All
 ObjCBlockIndentWidth: '2'
 PointerAlignment: Left
